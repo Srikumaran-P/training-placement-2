@@ -1,0 +1,23 @@
+class Solution(object):
+    def checkZeroOnes(self, s):
+        c = 0
+        c1 = 0
+        a = []
+        b = []
+        for i in s:
+            if (i=="1"):
+                c+=1
+            else:
+                a.append(c)
+                c=0
+            if (i=="0"):
+                c1+=1
+            else:
+                b.append(c1)
+                c1=0
+        b.append(c1)
+        a.append(c)
+        if (max(a) > max(b)):
+            return True
+        return False
+        
